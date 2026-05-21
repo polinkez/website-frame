@@ -1,0 +1,92 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+}
+
+img,
+canvas {
+  max-width: 100%;
+}
+
+header,
+.second-screen,
+.third-screen,
+.fourth-screen,
+.fifth-screen,
+.footer,
+.running-line-1,
+.running-line-2 {
+  width: 100%;
+}
+
+/* MENU */
+
+@media (max-width: 768px) {
+  .site-header {
+    top: 5vw;
+    left: 5vw;
+    right: 5vw;
+  }
+
+  .logo {
+    width: 18vw;
+  }
+
+  .menu-box {
+    top: 5vw;
+    right: 5vw;
+
+    width: 72vw;
+    height: 68vw;
+  }
+
+  .menu-panel {
+    width: 4.8vw;
+    height: 4.8vw;
+
+    gap: 3vw;
+  }
+
+  .menu-button {
+    width: 4.8vw;
+    height: 4.8vw;
+  }
+
+  .menu-panel::after {
+    top: 5vw;
+    right: 5vw;
+
+    width: 4.8vw;
+    height: 4.8vw;
+  }
+
+  body.menu-open .menu-button,
+  body.is-home .menu-button {
+    top: 5vw;
+    right: 5vw;
+  }
+
+  body.menu-open .menu-panel,
+  body.is-home .menu-panel {
+    width: 72vw;
+    height: 68vw;
+
+    padding: 18vw 7vw 7vw;
+    border-radius: 4vw;
+  }
+
+  .menu-link {
+    font-size: 6vw;
+  }
+
+  .menu-link:hover,
+  body.menu-open .menu-link:hover,
+  body.is-home .menu-link:hover {
+    transform: translateX(1vw);
+  }
+}
