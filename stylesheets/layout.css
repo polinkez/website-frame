@@ -8,7 +8,7 @@ html {
 
 body {
   margin: 0 auto;
-  background: var(--graphite);
+  background: var(--light);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -17,13 +17,20 @@ body {
   margin: 0 auto;
 }
 
+:root {
+  --light: #f8f8f7;
+  --graphite: #2b2f36;
+  --orange: #fd3d06;
+  --gray-blue: #5f6673;
+}
+
 /* MENU */
 
 .site-header {
-  position: fixed;
+  position: absolute;
   top: 2vw;
   left: 2vw;
-  right: 2vw;
+  z-index: 10;
 
   display: flex;
   justify-content: space-between;
@@ -33,6 +40,7 @@ body {
 .logo {
   display: block;
   width: 6vw;
+  left: 0vw;
   position: relative;
 }
 
@@ -43,9 +51,9 @@ body {
 }
 
 .menu-box {
-  position: fixed;
-  top: 2vw;
-  right: 2vw;
+  position: absolute;
+  right: -90vw;
+  z-index: 11;
 
   width: 28vw;
   height: 22vw;
@@ -63,7 +71,7 @@ body {
 
   padding: 0;
   border-radius: 50%;
-  background-color: #000;
+  background-color: var(--orange);
 
   display: flex;
   flex-direction: column;
@@ -89,7 +97,7 @@ body {
   height: 1.5vw;
 
   border-radius: 50%;
-  background-color: #eee;
+  background-color: var(--light);
 
   opacity: 0;
   transition: opacity 0.25s ease;
@@ -98,7 +106,7 @@ body {
 .menu-link {
   width: fit-content;
 
-  color: #eee;
+  color: var(--light);
   text-decoration: none;
 
   font-family: 'Suisse Intl', Arial, sans-serif;
@@ -116,7 +124,7 @@ body {
 }
 
 .menu-link:hover {
-  color: #888;
+  color: #f6baa9;
   transform: translateX(0.45vw);
 }
 
@@ -140,7 +148,7 @@ body {
 }
 
 body.menu-open .menu-button,
-body.is-home .menu-button {
+body.home .menu-button {
   top: 1.4vw;
   right: 1.4vw;
 }
@@ -148,9 +156,9 @@ body.is-home .menu-button {
 /* opened */
 
 body.menu-open .menu-panel,
-body.is-home .menu-panel {
+body.home .menu-panel {
   width: 28vw;
-  height: 17vw;
+  height: 20vw;
 
   padding: 5.3vw 2.4vw 2.4vw;
   border-radius: 1.2vw;
@@ -159,49 +167,1521 @@ body.is-home .menu-panel {
 }
 
 body.menu-open .menu-panel::after,
-body.is-home .menu-panel::after {
+body.home .menu-panel::after {
   opacity: 1;
 }
 
-/* LINK APPEARANCE */
+/* link animation */
 
 body.menu-open .menu-link,
-body.is-home .menu-link {
+body.home .menu-link {
   opacity: 1;
   transform: translateY(0);
 }
 
 body.menu-open .menu-link:hover,
-body.is-home .menu-link:hover {
-  color: #888;
+body.home .menu-link:hover {
+  color: #f6baa9;
   transform: translateX(0.45vw);
 }
 
 body.menu-open .menu-link:nth-child(1),
-body.is-home .menu-link:nth-child(1) {
+body.home .menu-link:nth-child(1) {
   transition-delay: 0.16s;
 }
 
 body.menu-open .menu-link:nth-child(2),
-body.is-home .menu-link:nth-child(2) {
+body.home .menu-link:nth-child(2) {
   transition-delay: 0.22s;
 }
 
 body.menu-open .menu-link:nth-child(3),
-body.is-home .menu-link:nth-child(3) {
+body.home .menu-link:nth-child(3) {
   transition-delay: 0.28s;
 }
 
 body.menu-open .menu-link:nth-child(4),
-body.is-home .menu-link:nth-child(4) {
+body.home .menu-link:nth-child(4) {
   transition-delay: 0.34s;
 }
 
 body.menu-open .menu-link:nth-child(5),
-body.is-home .menu-link:nth-child(5) {
+body.home .menu-link:nth-child(5) {
   transition-delay: 0.4s;
 }
 
-body.is-home .menu-button {
+body.home .menu-button {
   pointer-events: none;
+}
+
+/* FIRST SCREEN */
+
+.home-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--light);
+}
+
+.home-caption {
+  position: absolute;
+  left: 38vw;
+  top: 58vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.4vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1vw;
+  line-height: 1.1;
+  color: var(--graphite);
+}
+
+.home-title {
+  position: absolute;
+  left: 2vw;
+  bottom: 2vw;
+
+  width: 96vw;
+
+  font-family: 'Neutral Face';
+  font-weight: 700;
+  font-size: 13vw;
+
+  line-height: 0.78;
+  letter-spacing: -0.8vw;
+
+  color: var(--orange);
+
+  white-space: nowrap;
+}
+
+/* SECOND SCREEN */
+
+.about-screen {
+  width: 100%;
+
+  padding-top: 4vw;
+  padding-bottom: 8vw;
+
+  background-color: var(--light);
+}
+
+.about-line {
+  width: 91vw;
+  height: 0.05vw;
+
+  margin: 0 auto;
+
+  background-color: #f6baa9;
+}
+
+.about-content {
+  width: 56vw;
+
+  margin-top: 4vw;
+  margin-left: 38vw;
+}
+
+.about-content p {
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+
+  color: var(--graphite);
+}
+
+/* THIRD SCREEN */
+
+.events-screen {
+  height: 100vh;
+  background-color: var(--orange);
+}
+
+.events-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--orange);
+  overflow: hidden;
+}
+
+.events-info {
+  position: absolute;
+  top: 3vw;
+  left: 2.5vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.55vw;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--light);
+}
+
+.events-list {
+  position: absolute;
+  left: 2.5vw;
+  bottom: 6.8vw;
+  width: 82vw;
+}
+
+.event-row {
+  width: 82vw;
+  border-bottom: 0.12vw solid var(--light);
+}
+
+.event-row p {
+  font-family: 'Neutral Face';
+  font-weight: 400;
+  font-size: 7.55vw;
+  line-height: 1.35;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+  color: var(--light);
+}
+
+.event-row.active p {
+  font-weight: 700;
+}
+
+.events-poster {
+  position: absolute;
+  right: 2.3vw;
+  bottom: 5vw;
+  width: 23vw;
+  border-radius: 0.4vw;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.events-poster.show {
+  opacity: 1;
+}
+
+/* FOURTH SCREEN */
+
+.projects-screen {
+  width: 100%;
+  padding: 7vw 2vw 8vw;
+  background-color: var(--light);
+}
+
+.projects-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.projects-title {
+  font-family: 'Neutral Face';
+  font-weight: 700;
+  font-size: 3.4vw;
+  line-height: 1;
+
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.projects-description {
+  margin-left: 7vw;
+
+  display: flex;
+  gap: 7vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+
+  color: var(--graphite);
+}
+
+.projects-gallery {
+  margin-top: 3vw;
+
+  display: flex;
+  gap: 1.2vw;
+}
+
+.projects-image {
+  display: block;
+  object-fit: cover;
+  border-radius: 0.6vw;
+}
+
+.projects-image-large {
+  width: 47.2vw;
+}
+
+.projects-image-small {
+  width: 47.2vw;
+  height: 40vh;
+}
+
+/* FIFTH SCREEN (tickets) */
+
+.ticket-screen {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10vw 2.5vw 6vw;
+  background-color: var(--light);
+}
+
+.ticket-title {
+  margin-left: 35.5vw;
+
+  font-family: 'Neutral Face';
+  font-weight: 700;
+  font-size: 5vw;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+
+  color: var(--orange);
+}
+
+.ticket-line {
+  width: 100%;
+  height: 0.05vw;
+
+  margin-top: 2.5vw;
+
+  background-color: rgba(253, 61, 6, 0.3);
+}
+
+.ticket-form {
+  width: 52vw;
+
+  margin-top: 3vw;
+  margin-left: 35.5vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.3vw;
+}
+
+.ticket-row {
+  display: flex;
+  align-items: flex-start;
+}
+
+.ticket-row label {
+  width: 12vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.3vw;
+  line-height: 1.1;
+
+  color: var(--graphite);
+}
+
+.ticket-row input {
+  width: 40vw;
+
+  border: none;
+  background-color: transparent;
+
+  font-family: 'Suisse Intl';
+  font-size: 3vw;
+  line-height: 1;
+
+  color: var(--graphite);
+}
+
+.ticket-row input::placeholder {
+  color: rgba(43, 47, 54, 0.3);
+}
+
+.ticket-row input:focus {
+  outline: none;
+}
+
+.ticket-dates,
+.ticket-times {
+  display: flex;
+  gap: 1.8vw;
+}
+
+.ticket-dates button,
+.ticket-times button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  font-family: 'Suisse Intl';
+  font-weight: 400;
+
+  color: var(--graphite);
+
+  transition: 0.3s ease;
+}
+
+.ticket-dates button.active,
+.ticket-times button.active {
+  font-weight: 700;
+}
+
+.ticket-dates button {
+  font-size: 3.4vw;
+  line-height: 0.9;
+}
+
+.ticket-dates button span {
+  display: block;
+  margin-top: 0.6vw;
+
+  font-size: 1vw;
+  color: rgba(43, 47, 54, 0.35);
+}
+
+.ticket-times button {
+  font-size: 3.4vw;
+  line-height: 0.9;
+}
+
+.ticket-times button span {
+  margin-left: 0.2vw;
+
+  font-size: 1vw;
+  text-decoration: underline;
+  color: rgba(43, 47, 54, 0.35);
+  vertical-align: top;
+}
+
+.ticket-submit {
+  width: 14vw;
+  height: 5.5vw;
+
+  margin-top: 2vw;
+  margin-left: 0;
+
+  border: none;
+  border-radius: 5vw;
+
+  background-color: rgba(43, 47, 54, 0.35);
+  color: var(--light);
+
+  font-family: 'Suisse Intl';
+  font-size: 1.7vw;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ticket-submit.active {
+  background-color: var(--orange);
+}
+
+/* FOOTER */
+
+.footer {
+  padding: 3vw 2.5vw 4vw;
+  padding-right: 10vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  background-color: var(--graphite);
+}
+
+.footer-logo {
+  display: block;
+  width: 6vw;
+}
+
+.footer-logo img {
+  display: block;
+  width: 100%;
+}
+
+.footer-nav {
+  margin-left: 3.6vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4vw;
+}
+
+.footer-nav a,
+.footer-authors p {
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+
+  text-decoration: none;
+  color: var(--gray-blue);
+
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--light);
+}
+
+.footer-authors {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4vw;
+
+  text-align: left;
+}
+
+/* ––––––––––––––––– */
+/* BUILDING */
+/* ––––––––––––––––– */
+
+/* FIRST SCREEN */
+
+.building-page {
+  width: 100%;
+  background-color: var(--light);
+  overflow: hidden;
+}
+
+.building-gallery {
+  height: 45vw;
+  background-color: var(--light);
+}
+
+.building-sticky {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 80vh;
+
+  overflow: hidden;
+}
+
+.building-title {
+  position: absolute;
+  top: 8vw;
+  left: 22vw;
+  z-index: 1;
+
+  width: 56vw;
+
+  font-family: 'Neutral Face';
+  font-size: 5.7vw;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.building-title span {
+  display: block;
+  font-weight: 400;
+}
+
+.building-title b {
+  display: block;
+  font-weight: 700;
+}
+
+.building-track {
+  position: absolute;
+  top: 18vw;
+  left: 2.5vw;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 1.3vw;
+}
+
+.building-img {
+  display: block;
+  flex-shrink: 0;
+
+  width: 23vw;
+  object-fit: cover;
+  border-radius: 0.35vw;
+}
+
+.img-big {
+  height: 26vw;
+}
+
+.img-small {
+  height: 18.3vw;
+}
+
+.img-medium {
+  height: 24vw;
+}
+
+/* RUNNING LINE */
+
+.running-line-1 {
+  overflow: hidden;
+  background-color: var(--orange);
+}
+
+.running-line-1 .marquee p {
+  white-space: nowrap;
+  padding-right: 3vw;
+
+  margin-top: 0.6vw;
+  margin-bottom: 0.6vw;
+
+  font-size: 1.4vw;
+  letter-spacing: 0.05vw;
+  font-family: 'Suiss Intl', Arial, Helvetica, sans-serif;
+  color: var(--light);
+}
+
+.running-line-1 .marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-hover 30s linear infinite;
+  animation-play-state: running;
+}
+
+.running-line-1:hover .marquee {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-hover {
+  0% {
+    transform: translateX(-80%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* SECOND SCREEN */
+
+.about-building {
+  padding: 8vw 2.5vw;
+  background-color: var(--light);
+}
+
+.about-building-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.about-building-header h2 {
+  font-family: 'Neutral Face';
+  font-weight: 700;
+  font-size: 3.4vw;
+  line-height: 1;
+  letter-spacing: -0.1vw;
+  text-transform: uppercase;
+
+  color: var(--orange);
+}
+
+.about-building-subtitle {
+  margin-left: 17vw;
+  margin-top: 1vw;
+
+  display: flex;
+  gap: 7vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.2vw;
+  line-height: 1.1;
+
+  color: var(--graphite);
+}
+
+.about-building-line {
+  width: 100%;
+  height: 0.05vw;
+
+  margin-top: 1vw;
+
+  background-color: rgba(253, 61, 6, 0.3);
+}
+
+.about-building-content {
+  margin-top: 3vw;
+}
+
+.about-building-text {
+  width: 56vw;
+  margin-left: 35vw;
+}
+
+.about-building-text p {
+  margin-bottom: 1.5vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+
+  color: var(--graphite);
+}
+
+.parallax-container {
+  position: relative;
+
+  margin-top: 4vw;
+
+  width: 100%;
+  height: 28vw;
+
+  overflow: hidden;
+  border-radius: 0.6vw;
+}
+
+.parallax-image {
+  position: absolute;
+  top: -10%;
+  left: 0;
+
+  width: 100%;
+  height: 120%;
+
+  object-fit: cover;
+}
+
+/* THIRD SCREEN */
+
+.floor-screen {
+  position: relative;
+  width: 100%;
+  height: 70vw;
+  padding: 3vw 2.5vw 7vw;
+  margin-top: -8vw;
+  background-color: var(--light);
+}
+
+.floor-map {
+  width: 86vw;
+}
+
+.floor-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.floor-control {
+  position: absolute;
+  top: 38vh;
+  right: 5vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7vw;
+}
+
+.floor-arrow {
+  border: none;
+  background-color: transparent;
+
+  font-family: 'Suisse Intl';
+  font-size: 2.4vw;
+  line-height: 1;
+
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.floor-number {
+  width: 3vw;
+  height: 3vw;
+
+  border: 0.12vw solid var(--orange);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.7vw;
+  line-height: 1;
+
+  color: var(--graphite);
+}
+
+.guide-button {
+  position: relative;
+  left: 40%;
+  bottom: -5vw;
+  transform: translateX(-50%);
+
+  padding: 1vw 2.2vw;
+
+  border-radius: 4vw;
+  background-color: var(--orange);
+
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+  line-height: 1;
+
+  color: var(--light);
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.guide-button:hover {
+  background-color: var(--graphite);
+}
+
+/* 1 FLOOR */
+
+.floor1-merch {
+  top: 4%;
+  left: 8%;
+
+  width: 24vw;
+  height: 24vw;
+}
+
+.floor1-relax {
+  top: 36%;
+  left: 32%;
+
+  width: 24vw;
+  height: 24vw;
+}
+
+.floor1-wc {
+  top: 44%;
+  left: 68%;
+
+  width: 24vw;
+  height: 24vw;
+}
+
+/* 2 FLOOR */
+
+.floor2-speakers {
+  top: 6%;
+  left: 4%;
+
+  width: 22vw;
+  height: 22vw;
+}
+
+.floor2-vinyl {
+  top: 34%;
+  left: 18%;
+
+  width: 28vw;
+  height: 28vw;
+}
+
+.floor2-media {
+  top: 18%;
+  left: 52%;
+
+  width: 22vw;
+  height: 22vw;
+}
+
+.floor2-library {
+  top: 2%;
+  left: 76%;
+
+  width: 18vw;
+  height: 18vw;
+}
+
+.floor2-entrance {
+  top: 50%;
+  left: 64%;
+
+  width: 24vw;
+  height: 24vw;
+}
+
+.floor-map {
+  position: relative;
+  width: 86vw;
+}
+
+.floor-hotspot {
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.floor2-zone {
+  display: none;
+}
+
+body.floor-two .floor1-zone {
+  display: none;
+}
+
+body.floor-two .floor2-zone {
+  display: block;
+}
+
+.floor-preview {
+  position: fixed;
+  z-index: 100;
+
+  width: 18vw;
+  height: 18vw;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.floor-preview.visible {
+  opacity: 1;
+}
+
+.floor-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ––––––––––––––––– */
+/* EVENTS */
+/* ––––––––––––––––– */
+
+.events-page {
+  width: 100%;
+  background-color: var(--light);
+}
+
+.events-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--light);
+  overflow: hidden;
+}
+
+.events-title {
+  position: absolute;
+  left: 43vw;
+  top: 42vh;
+
+  font-family: 'Neutral Face';
+  font-weight: 700;
+  font-size: 2.8vw;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: var(--orange);
+}
+
+.events-title::first-line {
+  font-weight: 400;
+}
+
+.events-note {
+  position: absolute;
+  left: 2.5vw;
+  bottom: 4vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+
+  color: var(--graphite);
+}
+
+.event-circle {
+  position: absolute;
+
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: transform 0.35s ease;
+}
+
+.event-circle:hover {
+  transform: scale(1.12);
+}
+
+.event-circle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* circle positions */
+
+.event-circle-1 {
+  top: 17vh;
+  left: 29vw;
+  width: 8vw;
+  height: 8vw;
+}
+
+.event-circle-2 {
+  top: 10vh;
+  left: 43vw;
+  width: 7vw;
+  height: 7vw;
+}
+
+.event-circle-3 {
+  top: 17vh;
+  left: 57vw;
+  width: 7vw;
+  height: 7vw;
+}
+
+.event-circle-4 {
+  top: 39vh;
+  left: 28vw;
+  width: 8vw;
+  height: 8vw;
+}
+
+.event-circle-5 {
+  top: 35vh;
+  left: 64vw;
+  width: 8vw;
+  height: 8vw;
+}
+
+.event-circle-6 {
+  top: 62vh;
+  left: 36vw;
+  width: 7vw;
+  height: 7vw;
+}
+
+.event-circle-7 {
+  top: 68vh;
+  left: 50vw;
+  width: 7vw;
+  height: 7vw;
+}
+
+.event-circle-8 {
+  top: 58vh;
+  left: 64vw;
+  width: 7vw;
+  height: 7vw;
+}
+
+/* POPUP */
+
+.event-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  height: 100vh;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(43, 47, 54, 0.55);
+}
+
+.event-popup.active {
+  display: flex;
+}
+
+.event-window {
+  position: relative;
+
+  width: 46vw;
+  min-height: 42vw;
+
+  padding: 4.5vw 2.5vw 2.5vw;
+
+  border-radius: 0.8vw;
+  background-color: var(--light);
+}
+
+.event-close {
+  position: absolute;
+  transform: rotate(45deg);
+  top: 2vw;
+  right: 2vw;
+
+  border: none;
+  background: transparent;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+  line-height: 1;
+
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.event-type {
+  font-family: 'Neutral Face';
+
+  font-size: 1.5vw;
+  line-height: 1;
+
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.event-window h2 {
+  margin-top: 0.5vw;
+
+  font-family: 'Neutral Face';
+  font-weight: 700;
+  font-size: 3vw;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+
+  color: var(--orange);
+}
+
+.event-text {
+  margin-top: 1vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+
+  color: var(--graphite);
+}
+
+.event-tags {
+  margin-top: 2vw;
+
+  display: flex;
+  gap: 0.8vw;
+}
+
+.event-tags span {
+  padding: 0.8vw 1.2vw;
+
+  border: 0.08vw solid var(--orange);
+  border-radius: 4vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.2vw;
+  line-height: 1;
+
+  color: var(--orange);
+}
+
+.event-line {
+  width: 100%;
+  height: 0.05vw;
+
+  margin-top: 2.5vw;
+
+  background-color: rgba(253, 61, 6, 0.3);
+}
+
+.event-form {
+  margin-top: 2.3vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.event-form-row {
+  display: flex;
+  align-items: center;
+}
+
+.event-form-row label {
+  width: 9vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.25vw;
+
+  color: var(--graphite);
+}
+
+.event-form-row input {
+  width: 28vw;
+
+  border: none;
+  background-color: transparent;
+
+  font-family: 'Suisse Intl';
+  font-size: 2.3vw;
+  line-height: 1;
+
+  color: var(--graphite);
+}
+
+.event-form-row input::placeholder {
+  color: rgba(43, 47, 54, 0.3);
+}
+
+.event-form-row input:focus {
+  outline: none;
+}
+
+.event-submit {
+  width: 18vw;
+  height: 4vw;
+
+  margin: 1vw auto 0;
+
+  border: none;
+  border-radius: 5vw;
+
+  background-color: var(--orange);
+
+  font-family: 'Suisse Intl';
+  font-size: 1.5vw;
+
+  color: var(--light);
+  cursor: pointer;
+}
+
+.event-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* ––––––––––––––––– */
+/* SHOP */
+/* ––––––––––––––––– */
+
+.market-screen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+  background-color: var(--light);
+}
+
+.market-title {
+  position: absolute;
+  top: 6vw;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-transform: uppercase;
+  color: var(--orange);
+  text-align: center;
+  width: 90vw;
+}
+
+.market-title-bold {
+  font-family: 'Neutral Face';
+  font-size: 6vw;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.3vw;
+  text-align: center;
+}
+
+.market-title span:last-child {
+  font-family: 'Neutral Face';
+  font-size: 6vw;
+  line-height: 0.9;
+  letter-spacing: -0.25vw;
+}
+
+.market-product-image {
+  position: absolute;
+  left: 50%;
+  top: 24vh;
+
+  transform: translateX(-50%);
+
+  width: auto;
+  height: 30vw;
+
+  transition: 0.4s ease;
+}
+
+.market-caption {
+  position: absolute;
+  left: 50%;
+  bottom: 4vw;
+
+  transform: translateX(-50%);
+
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+  line-height: 1;
+
+  color: #c8c8c8;
+}
+
+.market-price {
+  position: absolute;
+  right: 3vw;
+  bottom: 2.5vw;
+
+  font-family: 'Neutral Face';
+  font-weight: 700;
+  font-size: 3.4vw;
+  line-height: 1;
+  letter-spacing: -0.15vw;
+
+  color: var(--orange);
+}
+
+.market-selector {
+  position: absolute;
+  left: 2vw;
+  bottom: 2vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.market-button {
+  width: 4vw;
+  height: 4vw;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--graphite);
+
+  overflow: hidden;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.market-button:hover {
+  transform: scale(1.08);
+}
+
+.market-button.active {
+  transform: scale(1.12);
+}
+
+.market-button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.market-button.active::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  border: 0.12vw solid var(--orange);
+  border-radius: 50%;
+}
+
+.market-button {
+  position: relative;
+}
+
+/* ––––––––––––––––– */
+/* VISIT */
+/* ––––––––––––––––– */
+.visit-section {
+  padding: 12vw 2.5vw 2.5vw;
+  background-color: var(--light);
+}
+
+.visit-header {
+  display: flex;
+  align-items: flex-start;
+}
+
+.visit-header h2 {
+  font-family: 'Neutral Face';
+  font-weight: 700;
+  font-size: 3.4vw;
+  letter-spacing: -0.1vw;
+  text-transform: uppercase;
+
+  color: var(--orange);
+}
+
+.visit-subtitle {
+  margin-left: 12.5vw;
+  margin-top: 1vw;
+
+  display: flex;
+  gap: 4vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.2vw;
+  line-height: 1.1;
+
+  color: var(--graphite);
+}
+
+.visit-line {
+  width: 100%;
+  height: 0.05vw;
+
+  margin-top: 1vw;
+
+  background-color: rgba(253, 61, 6, 0.3);
+}
+
+.visit-content {
+  margin-top: 3vw;
+}
+
+.visit-text {
+  width: 58vw;
+  margin-left: 35.5vw;
+}
+
+.visit-text p {
+  margin-bottom: 1.5vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+
+  color: var(--graphite);
+}
+
+.visit-image-container {
+  position: relative;
+
+  margin-top: 3vw;
+
+  width: 100%;
+  height: 34vw;
+
+  overflow: hidden;
+  border-radius: 0.6vw;
+}
+
+.visit-image {
+  position: absolute;
+  top: -10%;
+  left: 0;
+
+  width: 100%;
+  height: 120%;
+
+  object-fit: cover;
+}
+
+/* 404 SCREEN */
+/* 404 PAGE */
+
+.error-page {
+  position: relative;
+  width: 100%;
+  height: 47vw;
+
+  overflow: hidden;
+  background-color: var(--light);
+}
+
+.error-back {
+  position: absolute;
+  top: 13vw;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 1vw 2vw;
+
+  border: 0.08vw solid var(--graphite);
+  border-radius: 4vw;
+
+  font-family: 'Suisse Intl';
+  font-size: 1.4vw;
+  line-height: 1;
+
+  color: var(--graphite);
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.error-back:hover {
+  background-color: var(--graphite);
+  color: var(--light);
+}
+
+.error-title {
+  position: absolute;
+  top: 21vw;
+  left: 49.5%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'Neutral Face';
+  text-transform: uppercase;
+
+  color: var(--orange);
+}
+
+.error-title span:first-child {
+  font-size: 8vw;
+  line-height: 0.8;
+  letter-spacing: -0.45vw;
+  font-weight: 400;
+}
+
+.error-code {
+  font-size: 9vw;
+  line-height: 0.8;
+  letter-spacing: -0.45vw;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.error-monkey {
+  position: fixed;
+  z-index: 10;
+
+  width: 11vw;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.error-monkey.visible {
+  opacity: 1;
 }

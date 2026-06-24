@@ -13,80 +13,969 @@ canvas {
   max-width: 100%;
 }
 
-header,
-.second-screen,
-.third-screen,
-.fourth-screen,
-.fifth-screen,
-.footer,
-.running-line-1,
-.running-line-2 {
-  width: 100%;
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-/* MENU */
+img {
+  max-width: 100%;
+}
 
-@media (max-width: 768px) {
+/* 768 */
+
+@media screen and (max-width: 768px) {
+  /* MENU */
+
   .site-header {
     top: 5vw;
     left: 5vw;
-    right: 5vw;
   }
 
   .logo {
-    width: 18vw;
+    width: 17vw;
   }
 
   .menu-box {
+    position: fixed;
     top: 5vw;
     right: 5vw;
-
-    width: 72vw;
-    height: 68vw;
+    width: 78vw;
+    height: 78vw;
   }
 
   .menu-panel {
-    width: 4.8vw;
-    height: 4.8vw;
-
+    width: 5vw;
+    height: 5vw;
     gap: 3vw;
   }
 
   .menu-button {
-    width: 4.8vw;
-    height: 4.8vw;
+    width: 5vw;
+    height: 5vw;
   }
 
   .menu-panel::after {
     top: 5vw;
     right: 5vw;
-
-    width: 4.8vw;
-    height: 4.8vw;
+    width: 5vw;
+    height: 5vw;
   }
 
   body.menu-open .menu-button,
-  body.is-home .menu-button {
+  body.home .menu-button {
     top: 5vw;
     right: 5vw;
   }
 
   body.menu-open .menu-panel,
-  body.is-home .menu-panel {
-    width: 72vw;
-    height: 68vw;
-
+  body.home .menu-panel {
+    width: 78vw;
+    height: 74vw;
     padding: 18vw 7vw 7vw;
     border-radius: 4vw;
+  }
+
+  .menu-link {
+    font-size: 5.6vw;
+  }
+
+  /* HOME */
+
+  .home-screen {
+    height: 100vw;
+    min-height: 100vw;
+  }
+
+  .home-caption {
+    left: 5vw;
+    top: 42vw;
+    gap: 4vw;
+    font-size: 3.6vw;
+  }
+
+  .home-title {
+    left: 5vw;
+    bottom: 8vw;
+    width: 90vw;
+    font-size: 17vw;
+    line-height: 0.85;
+    letter-spacing: -1vw;
+    white-space: normal;
+  }
+
+  .about-screen {
+    padding-top: 10vw;
+    padding-bottom: 14vw;
+  }
+
+  .about-line {
+    width: 90vw;
+  }
+
+  .about-content {
+    width: 90vw;
+    margin-top: 8vw;
+    margin-left: 5vw;
+  }
+
+  .about-content p {
+    font-size: 4.5vw;
+    line-height: 1.12;
+  }
+
+  .events-screen {
+    height: 130vw;
+  }
+
+  .events-sticky {
+    height: 130vw;
+  }
+
+  .events-info {
+    top: 10vw;
+    left: 6vw;
+    font-size: 4.4vw;
+  }
+
+  .events-poster {
+    left: 22vw;
+    right: auto;
+    bottom: 56vw;
+    width: 56vw;
+    border-radius: 1vw;
+  }
+
+  .events-list {
+    left: 6vw;
+    bottom: 12vw;
+    width: 88vw;
+  }
+
+  .event-row {
+    width: 88vw;
+    border-bottom: 0.3vw solid var(--light);
+  }
+
+  .event-row p {
+    font-size: 11vw;
+    line-height: 1.38;
+  }
+
+  .projects-screen {
+    padding: 14vw 5vw;
+  }
+
+  .projects-header {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  .projects-title {
+    font-size: 8vw;
+  }
+
+  .projects-description {
+    margin-left: 0;
+    gap: 5vw;
+    font-size: 3.8vw;
+  }
+
+  .projects-gallery {
+    margin-top: 8vw;
+    flex-direction: column;
+    gap: 4vw;
+  }
+
+  .projects-image-large,
+  .projects-image-small {
+    width: 100%;
+    height: auto;
+    border-radius: 2vw;
+  }
+
+  /* TICKET */
+
+  .ticket-screen {
+    min-height: auto;
+    padding: 14vw 5vw;
+  }
+
+  .ticket-title {
+    margin-left: 0;
+    font-size: 10.5vw;
+    line-height: 0.95;
+  }
+
+  .ticket-line {
+    margin-top: 5vw;
+  }
+
+  .ticket-form {
+    width: 90vw;
+    margin-top: 8vw;
+    margin-left: 0;
+    gap: 7vw;
+  }
+
+  .ticket-row {
+    flex-direction: column;
+    gap: 2.5vw;
+  }
+
+  .ticket-row label {
+    width: 100%;
+    font-size: 3.8vw;
+  }
+
+  .ticket-row input {
+    width: 100%;
+    font-size: 8vw;
+  }
+
+  .ticket-dates,
+  .ticket-times {
+    flex-wrap: wrap;
+    gap: 4vw;
+  }
+
+  .ticket-dates button,
+  .ticket-times button {
+    font-size: 8vw;
+  }
+
+  .ticket-dates button span,
+  .ticket-times button span {
+    font-size: 2.8vw;
+  }
+
+  .ticket-submit {
+    width: 46vw;
+    height: 13vw;
+    border-radius: 13vw;
+    font-size: 4.4vw;
+  }
+
+  .ticket-window {
+    width: 82vw;
+    padding: 7vw;
+    border-radius: 4vw;
+  }
+
+  .ticket-window p {
+    font-size: 5vw;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    padding: 9vw 5vw;
+    flex-direction: column;
+    gap: 8vw;
+  }
+
+  .footer-logo {
+    width: 17vw;
+  }
+
+  .footer-nav {
+    margin-left: 0;
+    gap: 1.5vw;
+  }
+
+  .footer-nav a,
+  .footer-authors p {
+    font-size: 4.5vw;
+  }
+
+  /* BUILDING */
+
+  .building-gallery {
+    height: 145svw;
+  }
+
+  .building-sticky {
+    height: 128vw;
+  }
+
+  .building-title {
+    top: 26vw;
+    left: 5vw;
+    width: 90vw;
+    font-size: 10.5vw;
+    line-height: 0.88;
+  }
+
+  .building-track {
+    top: 58vw;
+    left: 5vw;
+    gap: 4vw;
+  }
+
+  .building-img,
+  .img-big,
+  .img-small,
+  .img-medium {
+    width: 66vw;
+    height: 72vw;
+    border-radius: 2vw;
+  }
+
+  .running-line-1 .marquee p {
+    padding-right: 8vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    font-size: 3.8vw;
+  }
+
+  .about-building,
+  .visit-section {
+    padding: 28vw 5vw 10vw;
+  }
+
+  .about-building-header,
+  .visit-header {
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  .about-building-header h2,
+  .visit-header h2 {
+    font-size: 8vw;
+  }
+
+  .about-building-subtitle,
+  .visit-subtitle {
+    margin-left: 0;
+    margin-top: 0;
+    gap: 6vw;
+    font-size: 3.8vw;
+  }
+
+  .about-building-line,
+  .visit-line {
+    margin-top: 5vw;
+  }
+
+  .about-building-content,
+  .visit-content {
+    margin-top: 7vw;
+  }
+
+  .about-building-text,
+  .visit-text {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .about-building-text p,
+  .visit-text p {
+    margin-bottom: 5vw;
+    font-size: 4.5vw;
+    line-height: 1.12;
+  }
+
+  .parallax-container {
+    margin-top: 8vw;
+    height: 58vw;
+    border-radius: 2vw;
+  }
+
+  .floor-screen {
+    height: auto;
+    padding: 8vw 5vw 22vw;
+    margin-top: 0;
+  }
+
+  .floor-map {
+    width: 90vw;
+    overflow-x: auto;
+  }
+
+  .floor-image {
+    width: 150vw;
+    max-width: none;
+  }
+
+  .floor-control {
+    top: auto;
+    right: 5vw;
+    bottom: 8vw;
+    gap: 1.5vw;
+  }
+
+  .floor-arrow {
+    font-size: 6vw;
+  }
+
+  .floor-number {
+    width: 9vw;
+    height: 9vw;
+    font-size: 4.5vw;
+    border-width: 0.35vw;
+  }
+
+  .guide-button {
+    position: absolute;
+    left: 5vw;
+    bottom: 9vw;
+    transform: none;
+    padding: 3.5vw 5vw;
+    border-radius: 10vw;
+    font-size: 3.8vw;
+  }
+
+  .floor-preview {
+    display: none;
+  }
+
+  /* EVENTS PAGE */
+
+  .events-hero {
+    height: 145vw;
+  }
+
+  .events-title {
+    left: 33vw;
+    top: 60vw;
+    font-size: 7vw;
+  }
+
+  .events-note {
+    left: 5vw;
+    bottom: 8vw;
+    gap: 5vw;
+    font-size: 3.8vw;
+  }
+
+  .event-circle-1 {
+    top: 30vw;
+    left: 20vw;
+    width: 16vw;
+    height: 16vw;
+  }
+
+  .event-circle-2 {
+    top: 22vw;
+    left: 45vw;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .event-circle-3 {
+    top: 33vw;
+    left: 73vw;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .event-circle-4 {
+    top: 53vw;
+    left: 12vw;
+    width: 16vw;
+    height: 16vw;
+  }
+
+  .event-circle-5 {
+    top: 55vw;
+    left: 73vw;
+    width: 17vw;
+    height: 17vw;
+  }
+
+  .event-circle-6 {
+    top: 80vw;
+    left: 24vw;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .event-circle-7 {
+    top: 96vw;
+    left: 42vw;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .event-circle-8 {
+    top: 86vw;
+    left: 65vw;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .event-window {
+    width: 88vw;
+    min-height: auto;
+    padding: 9vw 6vw 7vw;
+    border-radius: 4vw;
+  }
+
+  .event-close {
+    top: 5vw;
+    right: 5vw;
+    font-size: 5vw;
+  }
+
+  .event-type {
+    font-size: 4vw;
+  }
+
+  .event-window h2 {
+    font-size: 7.5vw;
+  }
+
+  .event-text {
+    font-size: 4.2vw;
+  }
+
+  .event-tags span {
+    padding: 2vw 3vw;
+    font-size: 3.4vw;
+  }
+
+  .event-form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2vw;
+  }
+
+  .event-form-row label {
+    width: 100%;
+    font-size: 3.8vw;
+  }
+
+  .event-form-row input {
+    width: 100%;
+    font-size: 6.5vw;
+  }
+
+  .event-submit {
+    width: 68vw;
+    height: 12vw;
+    font-size: 4.2vw;
+  }
+
+  /* SHOP */
+
+  .market-screen {
+    height: 145vw;
+  }
+
+  .market-title {
+    top: 30vw;
+    width: 88vw;
+  }
+
+  .market-title-bold,
+  .market-title span:last-child {
+    font-size: 10vw;
+    line-height: 0.9;
+    letter-spacing: -0.55vw;
+  }
+
+  .market-product-image {
+    top: 49vw;
+    height: 48vw;
+  }
+
+  .market-selector {
+    flex-direction: row;
+    left: 23vw;
+    bottom: 7vw;
+    gap: 2.5vw;
+  }
+
+  .market-button {
+    width: 11vw;
+    height: 11vw;
+  }
+
+  .market-caption {
+    bottom: 40vw;
+    font-size: 2.8vw;
+  }
+
+  .market-price {
+    left: 35vw;
+    bottom: 28vw;
+    font-size: 8vw;
+  }
+
+  /* 404 */
+
+  .error-page {
+    height: 120vw;
+  }
+
+  .error-back {
+    top: 24vw;
+    padding: 3vw 6vw;
+    border-radius: 9vw;
+    font-size: 3.8vw;
+  }
+
+  .error-title {
+    top: 45vw;
+  }
+
+  .error-title span:first-child {
+    font-size: 16vw;
+    letter-spacing: -0.9vw;
+  }
+
+  .error-code {
+    font-size: 21vw;
+    letter-spacing: -1vw;
+  }
+
+  .error-monkey {
+    width: 24vw;
+  }
+}
+
+/* 414 */
+
+@media screen and (max-width: 414px) {
+  .logo,
+  .footer-logo {
+    width: 19vw;
+  }
+
+  .menu-box {
+    width: 84vw;
+    height: 88vw;
+  }
+
+  body.menu-open .menu-panel,
+  body.home .menu-panel {
+    width: 84vw;
+    height: 86vw;
   }
 
   .menu-link {
     font-size: 6vw;
   }
 
-  .menu-link:hover,
-  body.menu-open .menu-link:hover,
-  body.is-home .menu-link:hover {
-    transform: translateX(1vw);
+  .home-screen {
+    height: 128vw;
+  }
+
+  .home-caption {
+    top: 50vw;
+    font-size: 4.3vw;
+  }
+
+  .home-title {
+    font-size: 19vw;
+    letter-spacing: -1.15vw;
+  }
+
+  .about-content p {
+    font-size: 5vw;
+  }
+
+  .events-screen,
+  .events-sticky {
+    height: 150vw;
+  }
+
+  .events-poster {
+    left: 18vw;
+    bottom: 72vw;
+    width: 64vw;
+  }
+
+  .event-row p {
+    font-size: 12vw;
+  }
+
+  .projects-title,
+  .about-building-header h2,
+  .visit-header h2 {
+    font-size: 9vw;
+  }
+
+  .ticket-title {
+    font-size: 12vw;
+  }
+
+  .building-gallery,
+  .building-sticky {
+    height: 150vw;
+  }
+
+  .building-title {
+    top: 35vw;
+    font-size: 10vw;
+  }
+
+  .building-track {
+    top: 60vw;
+  }
+
+  .building-img,
+  .img-big,
+  .img-small,
+  .img-medium {
+    width: 76vw;
+    height: 82vw;
+  }
+
+  .about-building-text p,
+  .visit-text p {
+    font-size: 5.2vw;
+  }
+
+  .parallax-container {
+    height: 66vw;
+  }
+
+  .floor-image {
+    width: 190vw;
+  }
+
+  .events-hero {
+    height: 150vw;
+  }
+
+  .events-title {
+    top: 66vw;
+    left: 27vw;
+    font-size: 8.5vw;
+  }
+
+  .events-note {
+    font-size: 4.2vw;
+  }
+
+  .market-screen {
+    height: 164vw;
+  }
+
+  .market-title {
+    top: 30vw;
+  }
+
+  .market-title-bold,
+  .market-title span:last-child {
+    font-size: 11.5vw;
+  }
+
+  .market-product-image {
+    top: 62vw;
+    height: 52vw;
+  }
+
+  .market-button {
+    width: 13vw;
+    height: 13vw;
+    top: 6vw;
+  }
+
+  .market-price {
+    font-size: 9vw;
+    top: 128vw;
+  }
+
+  .error-page {
+    height: 135vw;
+  }
+
+  .error-title {
+    top: 55vw;
+  }
+
+  .error-title span:first-child {
+    font-size: 18vw;
+  }
+
+  .error-code {
+    font-size: 24vw;
+  }
+}
+
+/* 360 */
+
+@media screen and (max-width: 360px) {
+  .logo,
+  .footer-logo {
+    width: 20vw;
+  }
+
+  .menu-link {
+    font-size: 6.5vw;
+  }
+
+  body.menu-open .menu-panel,
+  body.home .menu-panel {
+    height: 92vw;
+  }
+
+  .home-screen {
+    height: 140vw;
+  }
+
+  .home-title {
+    font-size: 20.5vw;
+    bottom: 10vw;
+  }
+
+  .home-caption {
+    top: 56vw;
+    font-size: 4.7vw;
+  }
+
+  .about-content p {
+    font-size: 5.5vw;
+  }
+
+  .events-screen,
+  .events-sticky {
+    height: 162vw;
+  }
+
+  .events-info {
+    font-size: 5vw;
+  }
+
+  .events-poster {
+    left: 16vw;
+    bottom: 82vw;
+    width: 68vw;
+  }
+
+  .event-row p {
+    font-size: 12.8vw;
+  }
+
+  .ticket-dates button,
+  .ticket-times button {
+    font-size: 9.5vw;
+  }
+
+  .ticket-submit {
+    width: 56vw;
+  }
+
+  .building-gallery,
+  .building-sticky {
+    height: 150vw;
+  }
+
+  .building-title {
+    top: 34vw;
+    font-size: 16vw;
+  }
+
+  .building-track {
+    top: 78vw;
+  }
+
+  .building-img,
+  .img-big,
+  .img-small,
+  .img-medium {
+    width: 82vw;
+    height: 88vw;
+  }
+
+  .floor-image {
+    width: 215vw;
+  }
+
+  .guide-button {
+    font-size: 4.2vw;
+  }
+
+  .events-hero {
+    height: 165vw;
+  }
+
+  .events-title {
+    top: 74vw;
+    left: 22vw;
+    font-size: 9.5vw;
+  }
+
+  .event-window h2 {
+    font-size: 8.5vw;
+  }
+
+  .event-text {
+    font-size: 4.7vw;
+  }
+
+  .market-screen {
+    height: 180vw;
+  }
+
+  .market-title {
+    top: 30vw;
+  }
+
+  .market-caption {
+    top: 140vw;
+    left: 52vw;
+  }
+
+  .market-title {
+    top: 30vw;
+  }
+
+  .market-title-bold,
+  .market-title span:last-child {
+    font-size: 12.5vw;
+  }
+
+  .market-product-image {
+    top: 68vw;
+    height: 50vw;
+  }
+
+  .market-selector {
+    bottom: 18vw;
+  }
+
+  .market-button {
+    width: 14vw;
+    height: 14vw;
+  }
+
+  .market-caption {
+    bottom: 17vw;
+    font-size: 3.8vw;
+  }
+
+  .market-price {
+    font-size: 10vw;
+  }
+
+  .error-page {
+    height: 150vw;
+  }
+
+  .error-back {
+    top: 32vw;
+    font-size: 4.3vw;
+  }
+
+  .error-title {
+    top: 64vw;
+  }
+
+  .error-title span:first-child {
+    font-size: 19vw;
+  }
+
+  .error-code {
+    font-size: 26vw;
+  }
+
+  .footer-nav a,
+  .footer-authors p {
+    font-size: 5.4vw;
   }
 }

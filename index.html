@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Культурный центр FRAME"</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
-    <script src="javascripts/scripts.js" defer></script>
-    <script src="javascripts/index.js" defer></script>
+    <link rel="stylesheet" href="stylesheets/adaptive.css" />
   </head>
-  <body class="is-home">
+
+  <body class="home">
     <header class="site-header">
       <a class="logo" href="./index.html">
         <img src="./images/logo.svg" alt="Центр звуковых сценариев" />
@@ -20,6 +20,13 @@
           <a href="./events.html" class="menu-link">События</a>
           <a href="./shop.html" class="menu-link">Маркет</a>
           <a href="./visit.html" class="menu-link">Посещение</a>
+          <a
+            href="https://polinkez.github.io/web-poster-m3/"
+            class="menu-link"
+            target="_blank"
+          >
+            Вакансии ↗
+          </a>
         </nav>
 
         <button
@@ -30,6 +37,160 @@
       </div>
     </header>
 
+    <!-- FIRST SCREEN -->
+
+    <main class="home-screen">
+      <div class="home-caption">
+        <p>(#)</p>
+        <p>Культурный центр<br />звуковых сценариев</p>
+      </div>
+
+      <h1 class="home-title">FRAME BUREAU</h1>
+    </main>
+
+    <!-- SECOND SCREEN -->
+
+    <section class="about-screen">
+      <div class="about-line"></div>
+
+      <div class="about-content">
+        <p>
+          Центр объединяет публичную программу, аудиолабораторию,
+          образовательные события, архив визуальных материалов и пространства
+          для самостоятельного прослушивания.
+        </p>
+      </div>
+    </section>
+
+    <!-- THIRD SCREEN -->
+
+    <section class="events-screen">
+      <div class="events-sticky">
+        <div class="events-info">
+          <p>Ближайшие события</p>
+          <p>25.05–31.05</p>
+        </div>
+
+        <div class="events-list">
+          <div class="event-row active">
+            <p>Лекция</p>
+          </div>
+
+          <div class="event-row">
+            <p>Мастер-класс</p>
+          </div>
+
+          <div class="event-row">
+            <p>Воркшоп</p>
+          </div>
+        </div>
+
+        <img class="events-poster" src="./images/3s-class.png" alt="" />
+      </div>
+    </section>
+
+    <!-- FOURTH SCREEN -->
+    <section class="projects-screen">
+      <div class="projects-header">
+        <h2 class="projects-title">Спецпроекты</h2>
+
+        <div class="projects-description">
+          <p>Исследуем</p>
+          <p>способы взаимодействия</p>
+        </div>
+      </div>
+
+      <div class="projects-gallery">
+        <img
+          src="./images/4s-img1.png"
+          alt=""
+          class="projects-image projects-image-large"
+        />
+
+        <img
+          src="./images/4s-img2.png"
+          alt=""
+          class="projects-image projects-image-small"
+        />
+      </div>
+    </section>
+
+    <!-- FIFTH SCREEN -->
+
+    <section class="ticket-screen">
+      <h2 class="ticket-title">Купить билет</h2>
+
+      <div class="ticket-line"></div>
+
+      <form class="ticket-form">
+        <div class="ticket-row">
+          <label>Имя</label>
+          <input type="text" name="userName" placeholder="Полина" />
+        </div>
+
+        <div class="ticket-row">
+          <label>Дата</label>
+
+          <div class="ticket-dates">
+            <button type="button">22<span>июнь, пн</span></button>
+            <button type="button">23<span>июнь, вт</span></button>
+            <button type="button">24<span>июнь, ср</span></button>
+            <button type="button">25<span>июнь, чт</span></button>
+            <button type="button">26<span>июнь, пт</span></button>
+            <button type="button">27<span>июнь, сб</span></button>
+          </div>
+        </div>
+
+        <div class="ticket-row">
+          <label>Время</label>
+
+          <div class="ticket-times">
+            <button type="button">10<span>00</span></button>
+            <button type="button">12<span>00</span></button>
+            <button type="button">14<span>00</span></button>
+            <button type="button">16<span>00</span></button>
+            <button type="button">18<span>00</span></button>
+          </div>
+        </div>
+
+        <div class="ticket-row">
+          <label>Почта</label>
+          <input type="email" name="email" placeholder="polina@gmail.com" />
+        </div>
+        <a href="./404.html" class="event-submit">Отправить</a>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+      <a class="footer-logo" href="./index.html">
+        <img src="./images/logo-grey.svg" alt="FRAME" />
+      </a>
+
+      <nav class="footer-nav">
+        <a href="./building.html">Пространство</a>
+        <a href="./events.html">События</a>
+        <a href="./shop.html">Маркет</a>
+        <a href="./visit.html">Посещение</a>
+
+        <a
+          href="https://polinkez.github.io/web-poster-m3/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Вакансии ↗
+        </a>
+      </nav>
+
+      <div class="footer-authors">
+        <p>Куратор: Камила Рихтер</p>
+        <p>Студент: Полина Бежан</p>
+      </div>
+    </footer>
+
     <script src="./javascript/menu.js"></script>
+    <script src="./javascript/third-screen.js"></script>
+    <script src="./javascript/fifth-screen.js"></script>
   </body>
 </html>

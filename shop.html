@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Культурный центр FRAME"</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
-    <script src="javascripts/scripts.js" defer></script>
-    <script src="javascripts/index.js" defer></script>
+    <link rel="stylesheet" href="stylesheets/adaptive.css" />
   </head>
   <body>
     <header class="site-header">
@@ -20,6 +19,13 @@
           <a href="./events.html" class="menu-link">События</a>
           <a href="./shop.html" class="menu-link">Маркет</a>
           <a href="./visit.html" class="menu-link">Посещение</a>
+          <a
+            href="https://polinkez.github.io/web-poster-m3/"
+            class="menu-link"
+            target="_blank"
+          >
+            Вакансии ↗
+          </a>
         </nav>
 
         <button
@@ -30,6 +36,91 @@
       </div>
     </header>
 
+    <!-- FIRST SCREEN -->
+    <section class="market-screen">
+      <h1 class="market-title">
+        <span class="market-title-bold">УМНАЯ ЛАМПА</span>
+        <span>НАКАЛИВАНИЯ FB800</span>
+      </h1>
+
+      <img
+        class="market-product-image"
+        src="./images/market-lamp.png"
+        alt="Умная лампа"
+      />
+
+      <p class="market-caption">Только в магазине FRAME</p>
+
+      <div class="market-price">1 800 ₽</div>
+
+      <div class="market-selector">
+        <button
+          class="market-button market-lamp active"
+          type="button"
+          aria-label="Умная лампа"
+        >
+          <img src="./images/icon-lamp.png" alt="" />
+        </button>
+
+        <button
+          class="market-button market-notebook"
+          type="button"
+          aria-label="Блокнот"
+        >
+          <img src="./images/icon-notebook.png" alt="" />
+        </button>
+
+        <button
+          class="market-button market-mask"
+          type="button"
+          aria-label="Маска для сна"
+        >
+          <img src="./images/icon-mask.png" alt="" />
+        </button>
+
+        <button
+          class="market-button market-hoodie"
+          type="button"
+          aria-label="Худи"
+        >
+          <img src="./images/icon-hoodie.png" alt="" />
+        </button>
+      </div>
+
+      <!-- скрытые данные товаров -->
+
+      <div class="market-content" hidden>
+        <div>
+          <h2>УМНАЯ ЛАМПА</h2>
+          <p>НАКАЛИВАНИЯ FB800</p>
+          <span>1 800 ₽</span>
+          <img src="./images/market-lamp.png" alt="" />
+        </div>
+
+        <div>
+          <h2>ПОЛЕВОЙ БЛОКНОТ</h2>
+          <p>ДЛЯ ЗВУКОВЫХ ЗАМЕТОК</p>
+          <span>900 ₽</span>
+          <img src="./images/market-notebook.png" alt="" />
+        </div>
+
+        <div>
+          <h2>МАСКА ДЛЯ СНА</h2>
+          <p>ТИШИНА 2.0</p>
+          <span>1 200 ₽</span>
+          <img src="./images/market-mask.png" alt="" />
+        </div>
+
+        <div>
+          <h2>ХУДИ</h2>
+          <p>FRAME BUREAU</p>
+          <span>4 900 ₽</span>
+          <img src="./images/market-hoodie.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <script src="./javascript/shop.js"></script>
     <script src="./javascript/menu.js"></script>
   </body>
 </html>

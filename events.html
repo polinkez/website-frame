@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Культурный центр FRAME"</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
-    <script src="javascripts/scripts.js" defer></script>
-    <script src="javascripts/index.js" defer></script>
+    <link rel="stylesheet" href="stylesheets/adaptive.css" />
   </head>
   <body>
     <header class="site-header">
@@ -20,6 +19,13 @@
           <a href="./events.html" class="menu-link">События</a>
           <a href="./shop.html" class="menu-link">Маркет</a>
           <a href="./visit.html" class="menu-link">Посещение</a>
+          <a
+            href="https://polinkez.github.io/web-poster-m3/"
+            class="menu-link"
+            target="_blank"
+          >
+            Вакансии ↗
+          </a>
         </nav>
 
         <button
@@ -29,6 +35,104 @@
         ></button>
       </div>
     </header>
+
+    <!-- FIRST SCREEN -->
+
+    <main class="events-page">
+      <section class="events-hero">
+        <h1 class="events-title">
+          События<br />
+          в FRAME
+        </h1>
+
+        <div class="events-note">
+          <p>(&)</p>
+          <p>
+            Программа центра объединяет мастер-<br />
+            классы, лекции, прослушивания<br />
+            и публичные дискуссии
+          </p>
+        </div>
+
+        <button class="event-circle event-circle-1" type="button">
+          <img src="./images/event-1.png" alt="" />
+        </button>
+
+        <button class="event-circle event-circle-2" type="button">
+          <img src="./images/event-2.png" alt="" />
+        </button>
+
+        <button class="event-circle event-circle-3" type="button">
+          <img src="./images/event-3.png" alt="" />
+        </button>
+
+        <button class="event-circle event-circle-4" type="button">
+          <img src="./images/event-4.png" alt="" />
+        </button>
+
+        <button class="event-circle event-circle-5" type="button">
+          <img src="./images/event-5.png" alt="" />
+        </button>
+
+        <button class="event-circle event-circle-6" type="button">
+          <img src="./images/event-6.png" alt="" />
+        </button>
+
+        <button class="event-circle event-circle-7" type="button">
+          <img src="./images/event-7.png" alt="" />
+        </button>
+
+        <button class="event-circle event-circle-8" type="button">
+          <img src="./images/event-8.png" alt="" />
+        </button>
+      </section>
+
+      <div class="event-popup">
+        <div class="event-window">
+          <button class="event-close" type="button">+</button>
+
+          <p class="event-type">Лекция</p>
+          <h2>Отпечаток звука</h2>
+
+          <p class="event-text">
+            Лекция о звуке как носителе памяти,<br />
+            настроения и ощущения места.
+          </p>
+
+          <p class="event-text">
+            Для посещения лекции необходима<br />
+            регистрация. Это бесплатно!
+          </p>
+
+          <div class="event-tags">
+            <span>14+</span>
+            <span>25 июня 10:30</span>
+          </div>
+
+          <div class="event-line"></div>
+
+          <form class="event-form">
+            <div class="event-form-row">
+              <label>Имя</label>
+              <input type="text" name="eventName" placeholder="Полина" />
+            </div>
+
+            <div class="event-form-row">
+              <label>Почта</label>
+              <input
+                type="email"
+                name="eventEmail"
+                placeholder="polina@gmail.com"
+              />
+            </div>
+
+            <a href="./404.html" class="event-submit">Зарегистрироваться</a>
+          </form>
+        </div>
+      </div>
+    </main>
+
     <script src="./javascript/menu.js"></script>
+    <script src="./javascript/events.js"></script>
   </body>
 </html>
