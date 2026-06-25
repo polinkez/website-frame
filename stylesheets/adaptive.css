@@ -639,32 +639,73 @@ img {
 /* 414 */
 
 @media screen and (max-width: 414px) {
-  .logo,
-  .footer-logo {
-    width: 19vw;
-  }
+  /* 414 MENU */
 
-  .menu-box {
-    width: 84vw;
-    height: 88vw;
-  }
+  @media screen and (max-width: 414px) {
+    .site-header {
+      top: 5vw;
+      left: 5vw;
+    }
 
-  body.menu-open .menu-panel,
-  body.home .menu-panel {
-    width: 84vw;
-    height: 86vw;
-  }
+    .logo {
+      width: 18vw;
+    }
 
-  .menu-link {
-    font-size: 6vw;
+    .menu-box {
+      position: fixed;
+      top: 5vw;
+      right: 5vw;
+
+      width: 52vw;
+      height: 52vw;
+    }
+
+    .menu-panel {
+      width: 5vw;
+      height: 5vw;
+      gap: 2vw;
+    }
+
+    .menu-button {
+      width: 5vw;
+      height: 5vw;
+    }
+
+    .menu-panel::after {
+      top: 4vw;
+      right: 4vw;
+
+      width: 5vw;
+      height: 5vw;
+    }
+
+    body.menu-open .menu-button,
+    body.home .menu-button {
+      top: 4vw;
+      right: 4vw;
+    }
+
+    body.menu-open .menu-panel,
+    body.home .menu-panel {
+      width: 52vw;
+      height: 52vw;
+
+      padding: 15vw 5vw 5vw;
+      border-radius: 3vw;
+    }
+
+    .menu-link {
+      font-size: 4.5vw;
+      line-height: 1.05;
+    }
   }
 
   .home-screen {
-    height: 128vw;
+    height: 170vw;
   }
 
   .home-caption {
-    top: 50vw;
+    top: 90vw;
     font-size: 4.3vw;
   }
 
@@ -800,22 +841,37 @@ img {
 /* 360 */
 
 @media screen and (max-width: 360px) {
-  .logo,
-  .footer-logo {
-    width: 20vw;
+  .logo {
+    width: 19vw;
   }
 
-  .menu-link {
-    font-size: 6.5vw;
+  .menu-box {
+    top: 5vw;
+    right: 5vw;
+
+    width: 56vw;
+    height: 58vw;
   }
 
   body.menu-open .menu-panel,
   body.home .menu-panel {
-    height: 92vw;
+    width: 56vw;
+    height: 58vw;
+
+    padding: 16vw 5vw 5vw;
+    border-radius: 3.5vw;
+  }
+
+  .menu-link {
+    font-size: 5vw;
+  }
+  body.menu-open .menu-panel,
+  body.home .menu-panel {
+    height: 58vw;
   }
 
   .home-screen {
-    height: 140vw;
+    height: 180vw;
   }
 
   .home-title {
@@ -824,7 +880,7 @@ img {
   }
 
   .home-caption {
-    top: 56vw;
+    top: 90vw;
     font-size: 4.7vw;
   }
 
