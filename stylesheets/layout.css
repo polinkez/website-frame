@@ -678,16 +678,15 @@ body.home .menu-button {
 }
 
 .building-gallery {
-  height: 45vw;
+  height: 48vw;
   background-color: var(--light);
 }
 
 .building-sticky {
-  position: sticky;
-  top: 0;
+  position: relative;
 
   width: 100%;
-  height: 80vh;
+  height: 48vw;
 
   overflow: hidden;
 }

@@ -7,12 +7,17 @@ function buildingScroll() {
   if (!gallery || !track) return
 
   window.addEventListener('scroll', () => {
-    let screenTop = gallery.getBoundingClientRect().top
-    let screenHeight = gallery.offsetHeight - window.innerHeight
-    let progress = -screenTop / screenHeight
+    let rect = gallery.getBoundingClientRect()
+    let progress =
+      (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
 
-    if (progress < 0) progress = 0
-    if (progress > 1) progress = 1
+    if (progress < 0) {
+      progress = 0
+    }
+
+    if (progress > 1) {
+      progress = 1
+    }
 
     let move = progress * 115
 
