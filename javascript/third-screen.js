@@ -40,9 +40,9 @@ function eventsScroll() {
       poster.classList.remove('show')
     }
   })
-  
+}
 
-  let trailImages = [
+let trailImages = [
   './images/building-1.png',
   './images/event-1.png',
   './images/building-2.png',
