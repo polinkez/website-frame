@@ -28,7 +28,7 @@ function photoTrail() {
     let distanceY = event.clientY - lastY
     let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY)
 
-    if (distance < 100) return
+    if (distance < 110) return
 
     lastX = event.clientX
     lastY = event.clientY
