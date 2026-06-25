@@ -1,48 +1,4 @@
-let posters = [
-  './images/3s-class.png',
-  './images/3s-tutorial.png',
-  './images/3s-workshop.png'
-]
-
-eventsScroll()
-
-function eventsScroll() {
-  let eventsScreen = document.querySelector('.events-screen')
-  let eventRows = document.querySelectorAll('.event-row')
-  let poster = document.querySelector('.events-poster')
-
-  if (!eventsScreen || !eventRows.length || !poster) return
-
-  window.addEventListener('scroll', () => {
-    let screenTop = eventsScreen.getBoundingClientRect().top
-    let scrollDistance = -screenTop
-
-    let activeIndex = 0
-
-    if (scrollDistance > window.innerHeight * 0.06) {
-      activeIndex = 1
-    }
-
-    if (scrollDistance > window.innerHeight * 0.12) {
-      activeIndex = 2
-    }
-
-    eventRows.forEach((row) => {
-      row.classList.remove('active')
-    })
-
-    eventRows[activeIndex].classList.add('active')
-    poster.src = posters[activeIndex]
-
-    if (scrollDistance > window.innerHeight * 0) {
-      poster.classList.add('show')
-    } else {
-      poster.classList.remove('show')
-    }
-  })
-  
-
-  let trailImages = [
+let trailImages = [
   './images/building-1.png',
   './images/event-1.png',
   './images/building-2.png',
@@ -72,7 +28,7 @@ function photoTrail() {
     let distanceY = event.clientY - lastY
     let distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY)
 
-    if (distance < 45) return
+    if (distance < 90) return
 
     lastX = event.clientX
     lastY = event.clientY
